@@ -189,9 +189,11 @@ resetBtn.addEventListener("click", () => {
 })
 
 // read data and add it to overview table
+let count = 0;
 let isUpdate = false;
 let isDelete = false;
 const getAllProjects = () => {
+    count = 0;
     const overflowTableBody = document.querySelector("#overviewTable tbody")
     const updateTableBody = document.querySelector("#updateTable tbody")
     const deleteTableBody = document.querySelector("#deleteTable tbody")
@@ -202,13 +204,22 @@ const getAllProjects = () => {
         updateTableBody.innerHTML = '';
         deleteTableBody.innerHTML = '';
         let data;
-
+        let categoryColor = "";
         for (let project in projects) {
+            if (projects[project].category == "websites") {
+                categoryColor = "bg-orange-500"
+            } else if (projects[project].category == "js") {
+                categoryColor = "bg-yellow-500"
+            } else if (projects[project].category == "react") {
+                categoryColor = "bg-blue-500"
+            }
+            count++;
             if (isUpdate) {
                 data = `<tr data-id=${project}>
+                    <td class="count bg-blue-500  text-white hover:bg-blue-700 text-center font-bold">${count}</td>
                     <td>${projects[project].projectName}</td>
                     <td>${projects[project].altText}</td>
-                    <td>${projects[project].category}</td>
+                    <td class="${categoryColor} text-white">${projects[project].category}</td>
                     <td><a class="underline text-red-800" href="${projects[project].repositoryLink}" target="_blank">${projects[project].repositoryLink}</a></td>
                     <td><a class="underline text-red-800" href="${projects[project].demoLink}" target="_blank">${projects[project].demoLink}</a></td>
                     <td>
@@ -222,9 +233,10 @@ const getAllProjects = () => {
                 updateTableBody.innerHTML += data;
             } else if (isDelete) {
                 data = `<tr data-id=${project}>
+                <td class="count bg-blue-500 text-white hover:bg-blue-700 text-center font-bold">${count}</td>
                 <td>${projects[project].projectName}</td>
                 <td>${projects[project].altText}</td>
-                <td>${projects[project].category}</td>
+                <td class="${categoryColor} text-white">${projects[project].category}</td>
                 <td><a class="underline text-red-800" href="${projects[project].repositoryLink}" target="_blank">${projects[project].repositoryLink}</a></td>
                 <td><a class="underline text-red-800" href="${projects[project].demoLink}" target="_blank">${projects[project].demoLink}</a></td>
                 <td>
@@ -240,9 +252,10 @@ const getAllProjects = () => {
             else {
                 data = `
                 <tr data-id=${project}>
+                    <td class="count bg-blue-500 text-white hover:bg-blue-700 text-center font-bold">${count}</td>
                     <td>${projects[project].projectName}</td>
                     <td>${projects[project].altText}</td>
-                    <td>${projects[project].category}</td>
+                    <td class="${categoryColor} text-white">${projects[project].category}</td>
                     <td><a class="underline text-red-800" href="${projects[project].repositoryLink}" target="_blank">${projects[project].repositoryLink}</a></td>
                     <td><a class="underline text-red-800" href="${projects[project].demoLink}" target="_blank">${projects[project].demoLink}</a></td>
                     <td>
