@@ -58,6 +58,8 @@ tabOverview.addEventListener("click", () => {
     addWidget.hidden = true
     updateWidget.hidden = true
     deleteWidget.hidden = true
+    isUpdate = false;
+    isDelete = false;
     getAllProjects()
 
 })
@@ -68,6 +70,7 @@ tabUpdate.addEventListener("click", () => {
     updateWidget.hidden = false
     deleteWidget.hidden = true
     isUpdate = true;
+    isDelete = false;
     getAllProjects()
 })
 tabDelete.addEventListener("click", () => {
@@ -76,6 +79,7 @@ tabDelete.addEventListener("click", () => {
     updateWidget.hidden = true
     deleteWidget.hidden = false
     isDelete = true;
+    isUpdate = false;
     getAllProjects()
 })
 
