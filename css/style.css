@@ -42,7 +42,7 @@ table tbody tr td:last-child {
     border-right: 1px solid #eee;
 }
 
-tbody tr:hover td:not(.count) {
+tbody tr:hover td:not(.count, .category) {
     background-color: #faf7f7;
 }
 
