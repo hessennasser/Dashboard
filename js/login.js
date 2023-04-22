@@ -13,18 +13,24 @@ firebase.initializeApp(firebaseConfig);
 
 const loginForm = document.querySelector('#login-form');
 
+const loader = document.getElementById("loader");
+
 loginForm.addEventListener('submit', function (event) {
     event.preventDefault(); // prevent the form from submitting
 
     const email = loginForm.email.value;
     const password = loginForm.password.value;
+    loader.hidden = true;
 
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(() => {
             // User is signed in.
             showAlert("User is signed in", "success");
             localStorage.setItem("isLoggedIn", true);
-            checkLogin();
+            loader.hidden = false;
+            setTimeout(() => {
+                checkLogin();
+            }, 2000);
         })
         .catch((error) => {
             // Handle Errors here.

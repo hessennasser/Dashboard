@@ -213,7 +213,7 @@ const getAllProjects = () => {
             if (projects[project].category == "websites") {
                 categoryColor = "bg-green-500"
             } else if (projects[project].category == "js") {
-                categoryColor = "bg-yellow-400"
+                categoryColor = "bg-cyan-600"
             } else if (projects[project].category == "react")  {
                 categoryColor = "bg-blue-500"
             }
@@ -223,7 +223,7 @@ const getAllProjects = () => {
                     <td class="count bg-blue-500  text-white hover:bg-blue-700 text-center font-bold">${count}</td>
                     <td>${projects[project].projectName}</td>
                     <td>${projects[project].altText}</td>
-                    <td class="category ${categoryColor} text-white">${projects[project].category}</td>
+                    <td class="category ${categoryColor} text-white text-center uppercase">${projects[project].category}</td>
                     <td><a class="underline text-red-800" href="${projects[project].repositoryLink}" target="_blank">${projects[project].repositoryLink}</a></td>
                     <td><a class="underline text-red-800" href="${projects[project].demoLink}" target="_blank">${projects[project].demoLink}</a></td>
                     <td>
@@ -240,7 +240,7 @@ const getAllProjects = () => {
                 <td class="count bg-blue-500 text-white hover:bg-blue-700 text-center font-bold">${count}</td>
                 <td>${projects[project].projectName}</td>
                 <td>${projects[project].altText}</td>
-                <td class="category ${categoryColor} text-white">${projects[project].category}</td>
+                <td class="category ${categoryColor} text-white text-center uppercase">${projects[project].category}</td>
                 <td><a class="underline text-red-800" href="${projects[project].repositoryLink}" target="_blank">${projects[project].repositoryLink}</a></td>
                 <td><a class="underline text-red-800" href="${projects[project].demoLink}" target="_blank">${projects[project].demoLink}</a></td>
                 <td>
@@ -259,7 +259,7 @@ const getAllProjects = () => {
                     <td class="count bg-blue-500 text-white hover:bg-blue-700 text-center font-bold">${count}</td>
                     <td>${projects[project].projectName}</td>
                     <td>${projects[project].altText}</td>
-                    <td class="category ${categoryColor} text-white">${projects[project].category}</td>
+                    <td class="category ${categoryColor} text-white text-center uppercase">${projects[project].category}</td>
                     <td><a class="underline text-red-800" href="${projects[project].repositoryLink}" target="_blank">${projects[project].repositoryLink}</a></td>
                     <td><a class="underline text-red-800" href="${projects[project].demoLink}" target="_blank">${projects[project].demoLink}</a></td>
                     <td>
