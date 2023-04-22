@@ -22,7 +22,7 @@ loginForm.addEventListener('submit', function (event) {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(() => {
             // User is signed in.
-            console.log("User is signed in");
+            showAlert("User is signed in", "success");
             localStorage.setItem("isLoggedIn", true);
             checkLogin();
         })
@@ -30,7 +30,7 @@ loginForm.addEventListener('submit', function (event) {
             // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.error("Error: ", errorMessage);
+            showAlert(`${"Error: ", errorMessage}`, "danger");
         });
 });
 
@@ -44,3 +44,38 @@ const checkLogin = () => {
     }
 };
 window.addEventListener("load", checkLogin)
+
+
+const showAlert = (message, type) => {
+    const alertsHolder = document.querySelector(".alerts-holder")
+    const successAlert = document.querySelector('.success-alert');
+    const dangerAlert = document.querySelector('.danger-alert');
+    const appendAlert = () => {
+        alertsHolder.hidden = false
+        if (type == "success") {
+            successAlert.hidden = false
+            dangerAlert.hidden = true
+            successAlert.textContent = message
+        } else {
+            successAlert.hidden = true
+            dangerAlert.hidden = false
+            dangerAlert.textContent = message
+        }
+    };
+    appendAlert();
+
+    const alert = bootstrap.Alert.getOrCreateInstance('[alert]');
+    setTimeout(() => {
+        alert.close();
+    }, 8000);
+};
+
+
+const passwordInput = document.querySelector('#password');
+const togglePasswordBtn = document.querySelector('#togglePasswordBtn');
+
+togglePasswordBtn.addEventListener('click', function () {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    togglePasswordBtn.innerHTML = type === 'password' ? '<i class="fa-solid fa-eye"></i>' : '<i class="fa-solid fa-eye-slash"></i>';
+});
