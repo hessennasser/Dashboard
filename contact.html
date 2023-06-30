@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/input.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cdnjs.cloudflare.com_ajax_libs_bootstrap_5.3.0_css_bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha512-3dZ9wIrMMij8rOH7X3kLfXAzwtcHpuYpEgQg1OA4QAob1e81H8ntUQmQm3pBudqIoySO5j0tHN4ENzA6+n2r4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script></head>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha512-3dZ9wIrMMij8rOH7X3kLfXAzwtcHpuYpEgQg1OA4QAob1e81H8ntUQmQm3pBudqIoySO5j0tHN4ENzA6+n2r4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
 
 <body class="h-full">
     <div class="min-h-full">
@@ -23,10 +24,11 @@
                         </div>
                         <div class="hidden md:block flex-1">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="index.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                <a href="index.html"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                                     aria-current="page">Projects</a>
                                 <a href="contact.html"
-                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                                     aria-current="page">contact links</a>
                             </div>
                         </div>
@@ -60,10 +62,10 @@
             <div class="md:hidden" id="mobile-menu">
                 <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="index.html" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                    <a href="index.html"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                         aria-current="page">Projects</a>
-                    <a href="contact.html"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium block"
+                    <a href="contact.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                         aria-current="page">contact links</a>
                 </div>
 
@@ -86,22 +88,18 @@
             </div>
         </header>
 
-
         <main class="bg-white">
             <div class="overview" id="overview" aria-hidden="true" hidden>
                 <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                    <h1 class="font-bold text-xl mb-4 text-center">Overview All Projects</h1>
+                    <h1 class="font-bold text-xl mb-4 text-center">Overview All Contact Links</h1>
                     <div class="overflow-x-auto">
                         <table id="overviewTable" class="text-sm font-semibold w-full">
                             <thead>
                                 <tr>
                                     <td>Number</td>
-                                    <td>Name</td>
-                                    <td>Alt text</td>
-                                    <td>Category</td>
-                                    <td>Repository link</td>
-                                    <td>Demo link</td>
-                                    <td>project image</td>
+                                    <td>Website name</td>
+                                    <td>Link</td>
+                                    <td>Website Icon</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -113,88 +111,43 @@
             </div>
             <div class="add" id="add-widget" aria-hidden="true" hidden>
                 <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                    <h1 class="font-bold text-xl mb-4 text-center">Add new project</h1>
+                    <h1 class="font-bold text-xl mb-4 text-center">Add new contact links</h1>
                     <form id="add-form">
                         <div class="space-y-12">
-                            <div
-                                class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                                <div class="text-center">
-                                    <img class="projectImgPreview mx-auto text-gray-300" src="" alt="">
-                                    <svg id="imagePlaceholder" class="mx-auto h-12 w-12 text-gray-300"
-                                        viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <div class="mt-4 flex text-sm leading-6 text-gray-600 justify-center">
-                                        <label for="imgUpdate"
-                                            class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500 block">
-                                            <span>Upload a file</span>
-                                                <input id="imgUpdate" name="imgUpdate" type="file" accept="image/*"
-                                                    required class="sr-only">
-                                        </label>
-                                        <p class="ml-2">Project image</p>
-                                        <p class="ml-2 projectImgName"></p>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="border-b border-gray-900/10 pb-12">
-                                <h2 class="text-base font-semibold leading-7 text-gray-900">Project Information</h2>
+                                <h2 class="text-base font-semibold leading-7 text-gray-900">contact link Information
+                                </h2>
                                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+
                                     <div class="sm:col-span-2">
-                                        <label for="projectName"
-                                            class="block text-sm font-medium leading-6 text-gray-900">Project
+                                        <label for="websiteName"
+                                            class="block text-sm font-medium leading-6 text-gray-900">website
                                             name</label>
                                         <div class="mt-2">
-                                            <input type="text" name="projectName" id="projectName" required
+                                            <input type="text" name="websiteName" id="websiteName" required
                                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-2">
-                                        <label for="altText"
-                                            class="block text-sm font-medium leading-6 text-gray-900">Alt
-                                            text</label>
-                                        <div class="mt-2">
-                                            <input type="text" name="altText" id="altText" required
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                        </div>
-                                    </div>
-
-                                    <div class="sm:col-span-2">
-                                        <label for="category"
-                                            class="block text-sm font-medium leading-6 text-gray-900">Category</label>
-                                        <div class="mt-2">
-                                            <select id="category" name="category" autocomplete="category-name" required
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                                <option value="websites">websites</option>
-                                                <option value="js">js apps</option>
-                                                <option value="react">react apps</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="sm:col-span-6">
-                                        <label for="repoLink"
-                                            class="block text-sm font-medium leading-6 text-gray-900">Repository
+                                        <label for="websiteLink"
+                                            class="block text-sm font-medium leading-6 text-gray-900">website
                                             link</label>
                                         <div class="mt-2">
-                                            <input id="repoLink" name="repoLink" type="url" required
+                                            <input id="websiteLink" name="websiteLink" type="url" required
                                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                         </div>
                                     </div>
 
-                                    <div class="sm:col-span-6">
-                                        <label for="demoLink"
-                                            class="block text-sm font-medium leading-6 text-gray-900">Demo link</label>
+                                    <div class="sm:col-span-2">
+                                        <label for="websiteIcon"
+                                            class="block text-sm font-medium leading-6 text-gray-900">Website
+                                            icon</label>
                                         <div class="mt-2">
-                                            <input id="demoLink" name="demoLink" type="url" required
+                                            <input type="text" name="websiteIcon" id="websiteIcon" required
                                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -212,18 +165,15 @@
             </div>
             <div class="update" id="update-widget" aria-hidden="true" hidden>
                 <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                    <h1 class="font-bold text-xl mb-4 text-center">Update Project</h1>
+                    <h1 class="font-bold text-xl mb-4 text-center">Update contact links</h1>
                     <div class="overflow-x-auto">
                         <table id="updateTable" class="text-sm w-full">
                             <thead>
                                 <tr>
                                     <td>Number</td>
-                                    <td>Name</td>
-                                    <td>Alt text</td>
-                                    <td>Category</td>
-                                    <td>Repository link</td>
-                                    <td>Demo link</td>
-                                    <td>project image</td>
+                                    <td>Website name</td>
+                                    <td>Link</td>
+                                    <td>Website Icon</td>
                                     <td>Action</td>
                                 </tr>
                             </thead>
@@ -236,18 +186,15 @@
             </div>
             <div class="delete" id="delete-widget" aria-hidden="true" hidden>
                 <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                    <h1 class="font-bold text-xl mb-4 text-center">Delete Project</h1>
+                    <h1 class="font-bold text-xl mb-4 text-center">Delete contact link</h1>
                     <div class="overflow-x-auto">
                         <table id="deleteTable" class="text-sm w-full">
                             <thead>
                                 <tr>
                                     <td>Number</td>
-                                    <td>Name</td>
-                                    <td>Alt text</td>
-                                    <td>Category</td>
-                                    <td>Repository link</td>
-                                    <td>Demo link</td>
-                                    <td>project image</td>
+                                    <td>Website name</td>
+                                    <td>Link</td>
+                                    <td>Website Icon</td>
                                     <td>Action</td>
                                 </tr>
                             </thead>
@@ -261,91 +208,43 @@
         </main>
     </div>
 
-
     <!-- update modal -->
     <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="updateModalLabel">Update Project</h5>
+                    <h5 class="modal-title" id="updateModalLabel">Update contact</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="updatedForm">
-                        <div
-                            class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                            <div class="text-center">
-                                <img id="projectImgPreview" class="projectImgPreview mx-auto text-gray-300" src=""
-                                    alt="">
-                                <svg id="imagePlaceholder" class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24"
-                                    fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <div class="mt-4 flex text-sm leading-6 text-gray-600 justify-center">
-                                    <label for="imgUpdateUpdateWidget"
-                                        class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500 block">
-                                        <span>Upload a file</span>
-                                        <input id="imgUpdateUpdateWidget" name="imgUpdateUpdateWidget" type="file"
-                                            accept="image/*" required class="sr-only">
-                                    </label>
-                                    <p class="ml-2">Project image</p>
-                                    <p class="ml-2 projectImgNameUpdateWidget"></p>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="pb-12">
-                            <h2 class="text-base font-semibold leading-7 text-gray-900">Project Information</h2>
+                            <h2 class="text-base font-semibold leading-7 text-gray-900">Contact Website Information</h2>
                             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                                <div class="sm:col-span-2">
-                                    <label for="projectName"
-                                        class="block text-sm font-medium leading-6 text-gray-900">Project
+                                <div class="sm:col-span-6">
+                                    <label for="websiteName"
+                                        class="block text-sm font-medium leading-6 text-gray-900">Website
                                         name</label>
                                     <div class="mt-2">
-                                        <input type="text" name="projectName" id="projectName" required
-                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                    </div>
-                                </div>
-
-                                <div class="sm:col-span-2">
-                                    <label for="altText" class="block text-sm font-medium leading-6 text-gray-900">Alt
-                                        text</label>
-                                    <div class="mt-2">
-                                        <input type="text" name="altText" id="altText" required
-                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                    </div>
-                                </div>
-
-                                <div class="sm:col-span-2">
-                                    <label for="category"
-                                        class="block text-sm font-medium leading-6 text-gray-900">Category</label>
-                                    <div class="mt-2">
-                                        <select id="category" name="category" autocomplete="category-name" required
-                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                            <option value="websites">websites</option>
-                                            <option value="js">js</option>
-                                            <option value="react">react</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="sm:col-span-6">
-                                    <label for="repoLink"
-                                        class="block text-sm font-medium leading-6 text-gray-900">Repository
-                                        link</label>
-                                    <div class="mt-2">
-                                        <input id="repoLink" name="repoLink" type="url" required
+                                        <input type="text" name="websiteName" id="websiteName" required
                                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
 
                                 <div class="sm:col-span-6">
-                                    <label for="demoLink" class="block text-sm font-medium leading-6 text-gray-900">Demo
-                                        link</label>
+                                    <label for="websiteLink"
+                                        class="block text-sm font-medium leading-6 text-gray-900">website link</label>
                                     <div class="mt-2">
-                                        <input id="demoLink" name="demoLink" type="url" required
+                                        <input id="websiteLink" name="websiteLink" type="url" required
+                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-6">
+                                    <label for="websiteIcon" class="block text-sm font-medium leading-6 text-gray-900">
+                                        Website icon</label>
+                                    <div class="mt-2">
+                                        <input type="text" name="websiteIcon" id="websiteIcon" required
                                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
@@ -360,6 +259,7 @@
             </div>
         </div>
     </div>
+
     <!-- loader -->
     <div class="loadingio-spinner-spinner-4dwonmwiy9b z-[500000]" id="loader" aria-hidden="true" hidden>
         <div class="ldio-lgs00whoqja">
@@ -386,7 +286,8 @@
         <div alert class="danger-alert bg-red-500 text-white p-4 rounded-xl" hidden>
         </div>
     </div>
-    <script src="main js files/script.js" type="module"></script>
+
+    <script src="main js files/content.js" type="module"></script>
 </body>
 
 </html>
